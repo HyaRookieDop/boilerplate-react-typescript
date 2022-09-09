@@ -76,7 +76,7 @@ export const AddOrUpdateFunctionModal: FC<AddOrUpdateModalProps<Partial<Function
       ?.validate()
       .then(async () => {
         setLoading(true)
-        const { code } = await request<BasicResponseModel>(
+        await request<BasicResponseModel>(
           {
             url: '/function/add',
             data: formApi.current?.getValues(),

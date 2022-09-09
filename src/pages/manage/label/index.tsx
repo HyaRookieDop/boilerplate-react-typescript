@@ -70,7 +70,7 @@ const AddOrUpdateModal: FC<AddOrUpdateModalProps<Partial<LabelFieldType>>> = ({ 
       ?.validate()
       .then(async () => {
         setLoading(true)
-        const { code } = await request<BasicResponseModel>(
+        await request<BasicResponseModel>(
           {
             url: '/label/add',
             data: formApi.current?.getValues(),

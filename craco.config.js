@@ -4,9 +4,6 @@ const resolve = (dir) => path.resolve(__dirname, dir)
 
 module.exports = ({ env }) => {
   return {
-    eslint: {
-      enable: false,
-    },
     // style: {
     //   postOptions: {
     //     plugins: [require("postcss-simple-vars"), require("postcss-nested")], // Additional plugins given in an array are appended to existing config.

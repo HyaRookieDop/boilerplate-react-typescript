@@ -88,7 +88,7 @@ const AddOrUpdateParamModal: FC<AddOrUpdateModalProps<Partial<ParamFieldType>>> 
       ?.validate()
       .then(async () => {
         setLoading(true)
-        const { code } = await request<BasicResponseModel>(
+        await request<BasicResponseModel>(
           {
             url: '/param/add',
             data: formApi.current?.getValues(),

@@ -80,7 +80,7 @@ const AddOrUpdateModal: FC<AddOrUpdateModalProps<Partial<IndicatorFieldType>>> =
       ?.validate()
       .then(async () => {
         setLoading(true)
-        const { code } = await request<BasicResponseModel>(
+        await request<BasicResponseModel>(
           {
             url: '/indicator/add',
             data: formApi.current?.getValues(),

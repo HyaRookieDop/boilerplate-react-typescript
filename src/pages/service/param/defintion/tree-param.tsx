@@ -135,7 +135,7 @@ const TreeParam: FC<{
   }
   async function del(record: TreeParamListProps) {
     setLoaidng(true)
-    const { code } = await request<BasicResponseModel>(
+    await request<BasicResponseModel>(
       {
         url: '/api_param/spear/spearParam/DeleteTreeParamNode',
         data: {
