@@ -1,0 +1,37 @@
+.directory-tree {
+  @apply h-full bg-white border-r;
+  width: 298px;
+  &-header {
+    @apply w-full px-3 pt-4 pb-3;
+
+    &-title {
+      @apply flex justify-between text-xl font-semibold pb-4;
+      &-action {
+        @apply space-x-3;
+        :nth-child(n) {
+          cursor: pointer;
+        }
+      }
+    }
+
+    &-filter {
+      @apply space-y-2 w-full;
+    }
+  }
+}
+
+.layout-content-wrapper {
+  .semi-layout-sider {
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 42px;
+  }
+  .semi-layout-content {
+    position: fixed;
+    height: 100vh;
+    width: calc(100vw - 298px);
+    left: 298px;
+    top: 42px;
+  }
+}

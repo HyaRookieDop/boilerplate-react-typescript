@@ -1,0 +1,18 @@
+.split-line {
+  @apply h-full top-0 w-2 absolute transition-all;
+  left: 298px;
+  background-color: #f0f2f5;
+  cursor: col-resize;
+
+  &-icon {
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 opacity-0 transition-opacity;
+  }
+
+  &:hover {
+    background-color: rgb(229, 230, 235);
+
+    .split-line-icon {
+      opacity: 1;
+    }
+  }
+}

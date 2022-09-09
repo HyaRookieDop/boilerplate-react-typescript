@@ -1,0 +1,26 @@
+.tabs {
+  .semi-tabs {
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+    &-bar-card {
+      background-color: #f8f8fb;
+    }
+
+    .semi-icon-close {
+      font-size: 10px !important;
+      top: 1px !important;
+    }
+
+    &-content {
+      background: white;
+      box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
+      padding: 0;
+      @apply px-5;
+    }
+
+    &-tab-active {
+      background: white !important;
+    }
+  }
+}

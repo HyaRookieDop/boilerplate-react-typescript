@@ -1,0 +1,22 @@
+.select-wrapper {
+  .semi-input-wrapper {
+    border-bottom: 1px solid var(--semi-color-primary) !important;
+    background-color: var(--semi-color-black) !important;
+    border-radius: 0 !important;
+    color: white !important;
+    .semi-input-prefix {
+      .semi-icon {
+        color: white !important;
+      }
+    }
+  }
+  .semi-input-wrapper-focus {
+    border: none !important;
+    border-bottom: 1px solid var(--semi-color-primary) !important;
+    background-color: transparent;
+  }
+  .semi-input-wrapper-focus:active {
+    border-bottom: 1px solid var(--semi-color-primary) !important;
+    background-color: transparent;
+  }
+}

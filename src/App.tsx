@@ -1,29 +1,17 @@
-import React from 'react'
-import logo from './logo.svg'
+import './App.scss'
+
+import { BrowserRouter } from 'react-router-dom'
+import { SWRConfig } from 'swr'
+
+import RenderRouter from './router'
 
 function App() {
-  function getItems() {
-    return false
-  }
-  getItems()
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <div></div>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SWRConfig>
+      <BrowserRouter>
+        <RenderRouter></RenderRouter>
+      </BrowserRouter>
+    </SWRConfig>
   )
 }
 
