@@ -1,5 +1,3 @@
-import './App.scss'
-
 import { BrowserRouter } from 'react-router-dom'
 import { SWRConfig } from 'swr'
 

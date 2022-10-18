@@ -1,4 +1,3 @@
-import { Modal, Toast } from '@douyinfe/semi-ui'
 import axios, { Axios, AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
 import useSWR, { SWRConfiguration, SWRResponse } from 'swr'
 
@@ -44,15 +43,15 @@ service.interceptors.response.use(
   (error) => {
     const { response, code, message } = error || {}
     if (code && code === 'ECONNABORTED' && message.indexOf('timeout') !== -1) {
-      Toast.error('接口请求超时,请刷新页面重试!')
+//       Toast.error('接口请求超时,请刷新页面重试!')
       return
     } else {
       if (response && response.data) {
-        Toast.error(checkStatus(response && response.status, response?.data?.msg))
+//         Toast.error(checkStatus(response && response.status, response?.data?.msg))
       } else {
         const errMsg = error?.response?.data?.message ?? UNKNOWN_ERROR
         error.message = errMsg
-        Toast.error(checkStatus(response && response.status, errMsg))
+//         Toast.error(checkStatus(response && response.status, errMsg))
       }
     }
     return Promise.reject(error)
@@ -105,11 +104,11 @@ function handleResponseMsg<T>(
   if (isShowMessage) {
     if (data && Reflect.has(data, 'responseCode') && data.responseCode === ResultEnum.SUCCESS) {
       if (isShowSuccessMessage || successMsg) {
-        Toast.success(successMsg || data.responseMessage)
+//         Toast.success(successMsg || data.responseMessage)
       }
     } else {
       if (isShowErrorMessage || errorMsg) {
-        Toast.error(errorMsg || data.responseMessage || UNKNOWN_ERROR)
+//         Toast.error(errorMsg || data.responseMessage || UNKNOWN_ERROR)
       }
       return Promise.reject(response)
     }
