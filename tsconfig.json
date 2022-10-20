@@ -23,7 +23,8 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "typeRoots": ["./types"]
+    "typeRoots": ["./types"],
+    "types": ["node"]
   },
   "include": [
     "src/**/*.ts",

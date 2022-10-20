@@ -26,3 +26,7 @@ interface BasicField {
   updateUser: string;
   updateTime: string;
 }
+
+
+declare const MODE : 'local' | 'dev' | 'prod' | 'uat'
+declare const API_URL : stirng

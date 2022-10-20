@@ -1,4 +1,5 @@
-import React, { FC, Component, ReactNode } from 'react'
+import { Spin } from 'antd'
+import React, { FC, Component, ReactNode, Suspense } from 'react'
 import { RouteProps } from 'react-router-dom'
 
 interface WrapperRouteProps extends RouteProps {
@@ -32,11 +33,16 @@ export const WrapperRouteWithOutLayoutComponent: FC<WrapperRouteProps> = ({
   icon,
   ...props
 }) => {
+  document.title = title || ''
   return (
     <ErrorBoundary
       fallback={(error) => <div className='w-full h-full text-center'>{error.message}</div>}
     >
-      {props.element}
+        <Suspense fallback={ <div className='w-screen h-screen bg-white text-center'>
+            <Spin spinning />
+        </div> }>
+            {props.element}
+        </Suspense>
     </ErrorBoundary>
   )
 }

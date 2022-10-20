@@ -1,0 +1,39 @@
+.ant-tabs-small .ant-tabs-tab {
+  font-size: 12px !important;
+}
+
+.ant-tabs-nav .ant-tabs-nav-more{
+    padding: 0px !important;
+    margin-left: 0px !important;
+}
+
+.ant-tree-switcher .ant-tree-switcher-icon {
+    font-size: 14px !important;
+    vertical-align: text-bottom;
+}
+
+.ant-tree .ant-tree-node-content-wrapper{
+    font-size: 12px !important;
+    min-height: 24px !important;
+    line-height: 24px !important;
+}
+
+.custom-radio{
+  margin-left: 0px !important;
+  .ant-radio-button-wrapper{
+    &:before{
+      background-color: transparent !important;
+    }
+    border: none !important;
+    padding: 0 10px;
+
+    &:focus-within{
+      box-shadow: none !important;
+    }
+  }
+}
+
+.ant-tree .ant-tree-node-content-wrapper.ant-tree-node-selected{
+  background-color: transparent !important;
+  color: #1890FF !important;
+}

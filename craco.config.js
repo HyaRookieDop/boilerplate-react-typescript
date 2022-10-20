@@ -1,14 +1,23 @@
 const WindiCSSWebpackPlugin = require('windicss-webpack-plugin')
 const path = require('path')
+const CracoAntDesignPlugin = require('craco-antd')
 const resolve = (dir) => path.resolve(__dirname, dir)
+const webpack = require("webpack")
+// const AntdDayjsWebpackPlugin =  require('antd-dayjs-webpack-plugin');
 
 module.exports = ({ env }) => {
+  const envJs = require('./env.js')[process.env.mode]
   return {
-    // style: {
-    //   postOptions: {
-    //     plugins: [require("postcss-simple-vars"), require("postcss-nested")], // Additional plugins given in an array are appended to existing config.
-    //   },
-    // },
+    plugins: [
+      {
+        plugin: CracoAntDesignPlugin,
+        options: {
+          customizeTheme: {
+            // '@primary-color': '#4945FF',
+          },
+        },
+      },
+    ],
     webpack: {
       plugins: {
         add: [
@@ -19,15 +28,11 @@ module.exports = ({ env }) => {
               host: 'localhost',
             },
           }),
-          // new WebpackBar({
-          //   name: env !== 'production' ? '正在启动' : '正在打包',
-          //   color: '#fa8c16',
-          //   profile: true,
-          // }),
-          // new SemiWebpackPlugin({
-          //   theme: '@semi-bot/semi-theme-strapi',
-          //   include: '~@semi-bot/semi-theme-strapi/scss/local.scss',
-          // }),
+          new webpack.DefinePlugin({
+            API_URL: JSON.stringify(envJs.API_URL),
+            MODE: JSON.stringify(envJs.MODE),
+          }),
+          // new AntdDayjsWebpackPlugin()
         ],
       },
       alias: {
@@ -36,25 +41,11 @@ module.exports = ({ env }) => {
     },
     devServer: {
       proxy: {
-        '/mock': {
-          target: '',
-          changeOrigin: true,
-          pathRewrite: {
-            '^/mock': '',
-          },
-        },
         '/api': {
-          target: 'http://192.168.31.19:8088',
+          target: envJs.API_URL,
           changeOrigin: true,
           pathRewrite: {
             '^/api': '',
-          },
-        },
-        '/api_param': {
-          target: 'http://spear-param.dev3.fxexpert.cn',
-          changeOrigin: true,
-          pathRewrite: {
-            '^/api_param': '',
           },
         },
       },
