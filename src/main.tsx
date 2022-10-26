@@ -7,7 +7,7 @@
  * @Description:
  *
  */
-import './virtual:windi.css'
+import 'virtual:windi.css'
 import { Provider } from 'react-redux'
 import ReactDOM from 'react-dom/client'
 

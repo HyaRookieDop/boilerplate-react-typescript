@@ -1,6 +1,6 @@
 import axios, { Axios, AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
 import useSWR, { SWRConfiguration, SWRResponse } from 'swr'
-
+import { message } from 'antd'
 import { ResultEnum } from '@/enum/httpEnum'
 
 import { checkStatus } from './checkStatus'
@@ -78,7 +78,7 @@ export const request = async <T = any>(
     }
 
     if (MODE === 'local') {
-      config.url =  '/api' + config.url
+      config.url = '/api' + config.url
     } else {
       config.url = API_URL + config.url
     }
@@ -102,11 +102,11 @@ function handleResponseMsg<T>(
   if (isShowMessage) {
     if (data && Reflect.has(data, 'responseCode') && data.responseCode === ResultEnum.SUCCESS) {
       if (isShowSuccessMessage || successMsg) {
-        //         Toast.success(successMsg || data.responseMessage)
+        message.success(successMsg || data.responseMessage)
       }
     } else {
       if (isShowErrorMessage || errorMsg) {
-        //         Toast.error(errorMsg || data.responseMessage || UNKNOWN_ERROR)
+        message.error(errorMsg || data.responseMessage || UNKNOWN_ERROR)
       }
       return Promise.reject(response)
     }

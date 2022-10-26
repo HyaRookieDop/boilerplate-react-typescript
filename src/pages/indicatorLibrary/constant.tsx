@@ -10,29 +10,29 @@ export const tabItems: Tab[] = [
   { label: '公司数据', key: '公司数据' },
 ]
 
-export const defaultTreeData: TreeDataNode[] = [
-  {
-    title: '利率与汇率',
-    key: '利率与汇率',
-    children: [],
-    isLeaf: false,
-    selectable: false,
-  },
-  {
-    title: '证劵市场',
-    key: '证劵市场',
-    children: [],
-    isLeaf: false,
-    selectable: false,
-  },
-  {
-    title: '科技教育',
-    key: '科技教育',
-    children: [],
-    isLeaf: false,
-    selectable: false,
-  },
-]
+// export const defaultTreeData: TreeDataNode[] = [
+//   {
+//     title: '利率与汇率',
+//     key: '利率与汇率',
+//     children: [],
+//     isLeaf: false,
+//     selectable: false,
+//   },
+//   {
+//     title: '证劵市场',
+//     key: '证劵市场',
+//     children: [],
+//     isLeaf: false,
+//     selectable: false,
+//   },
+//   {
+//     title: '科技教育',
+//     key: '科技教育',
+//     children: [],
+//     isLeaf: false,
+//     selectable: false,
+//   },
+// ]
 
 export const dateRadioOpts = [
   { label: '1W', value: '1w' },

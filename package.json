@@ -5,12 +5,11 @@
   "dependencies": {
     "@ant-design/charts": "^1.4.2",
     "@ant-design/icons": "^4.7.0",
-    "@craco/craco": "^6.4.5",
+    "@ant-design/pro-components": "^2.3.25",
     "@reduxjs/toolkit": "^1.8.6",
     "antd": "^4.23.6",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
-    "craco-antd": "^2.0.0",
     "dayjs": "^1.11.5",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
@@ -21,12 +20,11 @@
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.1",
     "swr": "^1.3.0",
-    "typescript": "^4.4.2",
-    "web-vitals": "^2.1.0"
+    "typescript": "^4.4.2"
   },
   "scripts": {
-    "start": "cross-env mode=local craco start",
-    "build": "craco build",
+    "start": "cross-env mode=local vite --host",
+    "build": "tsc && cross-env mode=dev3  vite build",
     "lint": "eslint src/**/*.{ts,tsx}",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
@@ -44,12 +42,14 @@
     ]
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.186",
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
-    "antd-dayjs-webpack-plugin": "^1.0.6",
+    "@vitejs/plugin-react": "^2.1.0",
+    "consola": "^2.15.3",
     "cross-env": "^7.0.3",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
@@ -58,9 +58,12 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "less": "^4.1.3",
     "prettier": "^2.7.1",
-    "react-app-rewired": "^2.2.1",
     "sass": "^1.54.5",
-    "windicss-webpack-plugin": "^1.7.6"
+    "vite": "^3.1.8",
+    "vite-plugin-imp": "^2.3.0",
+    "vite-plugin-style-import": "^2.0.0",
+    "vite-plugin-windicss": "^1.8.4"
   }
 }
