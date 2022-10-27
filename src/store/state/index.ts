@@ -5,12 +5,14 @@ export interface initialState {
   selectKeys: Key[]
   expandedKeys: Key[]
   menuItems: MenuItem[]
+  activeKey: string
 }
 
 const initialState: initialState = {
   selectKeys: [],
   expandedKeys: [],
   menuItems: [],
+  activeKey: '',
 }
 
 export const StateSlice = createSlice({
@@ -27,8 +29,11 @@ export const StateSlice = createSlice({
     setMenuItems: (state, action: PayloadAction<MenuItem[]>) => {
       state.menuItems = [...state.menuItems, ...action.payload]
     },
+    setActiveKey: (state, action: PayloadAction<string>) => {
+      state.activeKey = action.payload
+    },
   },
 })
 
-export const { setSelectkeys, setExpandedKeys, setMenuItems } = StateSlice.actions
+export const { setSelectkeys, setExpandedKeys, setMenuItems, setActiveKey } = StateSlice.actions
 export default StateSlice.reducer

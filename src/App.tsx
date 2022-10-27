@@ -1,3 +1,5 @@
+import './App.scss'
+
 import { BrowserRouter } from 'react-router-dom'
 import { SWRConfig } from 'swr'
 import zhCN from 'antd/es/locale/zh_CN'

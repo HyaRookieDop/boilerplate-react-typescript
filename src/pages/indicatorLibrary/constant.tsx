@@ -1,38 +1,5 @@
 import { Divider, TreeDataNode } from 'antd'
-import { Tab } from 'rc-tabs/lib/interface'
 import { LineChartOutlined, UnorderedListOutlined } from '@ant-design/icons'
-export const tabItems: Tab[] = [
-  { label: '中国宏观', key: '中国宏观' },
-  { label: '行业经济', key: '行业经济' },
-  { label: '国际宏观', key: '国际宏观' },
-  { label: '特色数据', key: '特色数据' },
-  { label: '市场行情', key: '市场行情' },
-  { label: '公司数据', key: '公司数据' },
-]
-
-// export const defaultTreeData: TreeDataNode[] = [
-//   {
-//     title: '利率与汇率',
-//     key: '利率与汇率',
-//     children: [],
-//     isLeaf: false,
-//     selectable: false,
-//   },
-//   {
-//     title: '证劵市场',
-//     key: '证劵市场',
-//     children: [],
-//     isLeaf: false,
-//     selectable: false,
-//   },
-//   {
-//     title: '科技教育',
-//     key: '科技教育',
-//     children: [],
-//     isLeaf: false,
-//     selectable: false,
-//   },
-// ]
 
 export const dateRadioOpts = [
   { label: '1W', value: '1w' },
